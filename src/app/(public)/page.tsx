@@ -39,25 +39,70 @@ export default async function HomePage() {
     console.error("Araçlar çekilirken hata oluştu:", error);
   }
 
-  const jsonLdData = {
-    "@context": "https://schema.org",
-    "@type": "AutoRental",
-    "name": "Ege Motors",
-    "url": "https://egemotors.net",
-    "logo": "https://egemotors.net/hero-bg-v2.png",
-    "description": "Premium araç ve motosiklet kiralama, yol yardım, bakım ve hukuki destek hizmetleri.",
-    "telephone": "+90-545-337-0837",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Premium Plaza, Lüks Cad. No:1",
-      "addressLocality": "İzmir",
-      "addressCountry": "TR"
+  const jsonLdData = [
+    {
+      "@context": "https://schema.org",
+      "@type": "AutoRental",
+      "name": "Ege Motors",
+      "url": "https://egemotors.net",
+      "logo": "https://egemotors.net/icon.png",
+      "description": "Premium araç ve motosiklet kiralama, yol yardım, bakım ve hukuki destek hizmetleri.",
+      "telephone": "+90-545-337-0837",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Premium Plaza, Lüks Cad. No:1",
+        "addressLocality": "İzmir",
+        "addressCountry": "TR"
+      },
+      "sameAs": [
+        "https://kiralikaracim.com",
+        "https://kiralikmotorsikletim.com"
+      ]
     },
-    "sameAs": [
-      "https://kiralikaracim.com",
-      "https://kiralikmotorsikletim.com"
-    ]
-  };
+    {
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "name": "Ege Motors Hizmetleri",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Araç Kiralama",
+          "url": "https://egemotors.net/services/car-rental"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Motor Kiralama",
+          "url": "https://egemotors.net/services/motorcycle-rental"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Avukat Hizmeti",
+          "url": "https://egemotors.net/services/legal-support"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "7/24 Çekici ve Yol Yardım",
+          "url": "https://egemotors.net/services/roadside-assistance"
+        },
+        {
+          "@type": "ListItem",
+          "position": 5,
+          "name": "Bakım ve Tamir",
+          "url": "https://egemotors.net/services/maintenance"
+        },
+        {
+          "@type": "ListItem",
+          "position": 6,
+          "name": "Parça Satışı / Mağaza",
+          "url": "https://egemotors.net/store"
+        }
+      ]
+    }
+  ];
 
   return (
     <>

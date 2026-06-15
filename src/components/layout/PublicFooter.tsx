@@ -6,6 +6,7 @@ import { db } from "@/lib/firebase";
 export const PublicFooter = async () => {
   let settings = {
     phone: "+90 (555) 123 45 67",
+    address: "Premium Plaza, Lüks Cad. No:1, İstanbul, Türkiye",
     instagram: "#",
     facebook: "#",
     twitter: "#",
@@ -21,6 +22,7 @@ export const PublicFooter = async () => {
     if (docSnap.exists()) {
       const data = docSnap.data();
       if (data.phone) settings.phone = data.phone;
+      if (data.address) settings.address = data.address;
       if (data.instagram) settings.instagram = data.instagram;
       if (data.facebook) settings.facebook = data.facebook;
       if (data.twitter) settings.twitter = data.twitter;
@@ -110,7 +112,7 @@ export const PublicFooter = async () => {
             <ul className="space-y-4">
               <li className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-primary shrink-0" />
-                <span className="text-sm text-muted-foreground">Premium Plaza, Lüks Cad. No:1, İstanbul, Türkiye</span>
+                <span className="text-sm text-muted-foreground">{settings.address}</span>
               </li>
               <li className="flex items-center gap-3">
                 <Phone className="w-5 h-5 text-primary shrink-0" />

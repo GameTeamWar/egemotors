@@ -155,8 +155,8 @@ export default function ReservationForm({ vehicle }: { vehicle: any }) {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
           </svg>
         </div>
-        <h2 className="text-4xl font-black mb-4 text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/60 relative z-10">Talebiniz Alındı!</h2>
-        <p className="text-white/60 text-lg mb-8 relative z-10 leading-relaxed">
+        <h2 className="text-4xl font-black mb-4 text-foreground relative z-10">Talebiniz Alındı!</h2>
+        <p className="text-muted-foreground text-lg mb-8 relative z-10 leading-relaxed">
           Rezervasyon talebiniz başarıyla sistemimize iletildi. Müşteri temsilcilerimiz en kısa sürede sizinle iletişime geçecektir.
         </p>
       </div>
@@ -165,23 +165,23 @@ export default function ReservationForm({ vehicle }: { vehicle: any }) {
 
   return (
     <div className="w-full relative z-10">
-      <form onSubmit={handleSubmit} className="glass-premium border border-white/10 p-8 md:p-10 rounded-3xl shadow-2xl">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-6 border-b border-white/10">
-          <h2 className="text-3xl font-black text-white tracking-wide mb-4 md:mb-0">Hızlı Rezervasyon</h2>
+      <form onSubmit={handleSubmit} className="glass-premium p-8 md:p-10 rounded-3xl shadow-2xl">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 pb-6 border-b border-border">
+          <h2 className="text-3xl font-black text-foreground tracking-wide mb-4 md:mb-0">Hızlı Rezervasyon</h2>
           {totalPrice > 0 ? (
-            <div className="md:text-right bg-white/5 px-6 py-3 rounded-2xl border border-white/5">
-              <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Toplam Tutar ({totalDays} Gün)</p>
+            <div className="md:text-right bg-muted px-6 py-3 rounded-2xl border border-border">
+              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Toplam Tutar ({totalDays} Gün)</p>
               <p className="text-3xl font-bold text-[#D4AF37] drop-shadow-sm">₺{totalPrice.toLocaleString('tr-TR')}</p>
             </div>
           ) : vehicle.dailyPrice ? (
-             <div className="md:text-right bg-white/5 px-6 py-3 rounded-2xl border border-white/5">
-              <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Günlük Bedel</p>
+             <div className="md:text-right bg-muted px-6 py-3 rounded-2xl border border-border">
+              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Günlük Bedel</p>
               <p className="text-3xl font-bold text-[#D4AF37] drop-shadow-sm">₺{vehicle.dailyPrice}</p>
             </div>
           ) : (
-            <div className="md:text-right bg-white/5 px-6 py-3 rounded-2xl border border-white/5">
-              <p className="text-xs text-white/50 uppercase tracking-widest mb-1">Toplam Tutar</p>
-              <p className="text-xl font-bold text-white/90">Fiyat Alınız</p>
+            <div className="md:text-right bg-muted px-6 py-3 rounded-2xl border border-border">
+              <p className="text-xs text-muted-foreground uppercase tracking-widest mb-1">Toplam Tutar</p>
+              <p className="text-xl font-bold text-foreground">Fiyat Alınız</p>
             </div>
           )}
         </div>
@@ -194,7 +194,7 @@ export default function ReservationForm({ vehicle }: { vehicle: any }) {
             </h3>
             <div className="space-y-6 mb-8">
               <div>
-                <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Alış Tarihi ve Saati *</label>
+                <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Alış Tarihi ve Saati *</label>
                 <div className="flex gap-2">
                   <input 
                     required
@@ -203,36 +203,36 @@ export default function ReservationForm({ vehicle }: { vehicle: any }) {
                     min={new Date().toISOString().split('T')[0]}
                     onChange={(e) => setStartDate(e.target.value)}
                     onClick={(e) => { try { e.currentTarget.showPicker(); } catch(err) {} }}
-                    className="w-2/3 bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20 [&::-webkit-calendar-picker-indicator]:cursor-pointer"
+                    className="w-2/3 bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50 [&::-webkit-calendar-picker-indicator]:cursor-pointer"
                   />
                   <input 
                     required
                     type="time" 
                     value={startTime}
                     onChange={(e) => setStartTime(e.target.value)}
-                    className="w-1/3 bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-1/3 bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
               </div>
-              <div className="flex bg-black/40 border border-white/10 rounded-2xl p-1 mb-6">
+              <div className="flex bg-muted border border-border rounded-2xl p-1 mb-6">
                 <button
                   type="button"
                   onClick={() => setRentalType('daily')}
-                  className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all ${rentalType === 'daily' ? 'bg-[#D4AF37] text-black shadow-lg' : 'text-white/60 hover:text-white'}`}
+                  className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all ${rentalType === 'daily' ? 'bg-[#D4AF37] text-black shadow-lg' : 'text-muted-foreground hover:text-foreground'}`}
                 >
                   Günlük Kiralama
                 </button>
                 <button
                   type="button"
                   onClick={() => setRentalType('monthly')}
-                  className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all ${rentalType === 'monthly' ? 'bg-[#D4AF37] text-black shadow-lg' : 'text-white/60 hover:text-white'}`}
+                  className={`flex-1 py-3 px-4 rounded-xl text-sm font-bold transition-all ${rentalType === 'monthly' ? 'bg-[#D4AF37] text-black shadow-lg' : 'text-muted-foreground hover:text-foreground'}`}
                 >
                   Aylık Kiralama
                 </button>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Kiralama Süresi ({rentalType === 'daily' ? 'Gün' : 'Ay'}) *</label>
+                <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Kiralama Süresi ({rentalType === 'daily' ? 'Gün' : 'Ay'}) *</label>
                 <div className="flex gap-2">
                   <input 
                     required
@@ -240,14 +240,14 @@ export default function ReservationForm({ vehicle }: { vehicle: any }) {
                     min="1"
                     value={rentalDuration}
                     onChange={(e) => setRentalDuration(Number(e.target.value))}
-                    className="w-2/3 bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-2/3 bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                   <input 
                     required
                     type="time" 
                     value={endTime}
                     onChange={(e) => setEndTime(e.target.value)}
-                    className="w-1/3 bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-1/3 bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
               </div>
@@ -274,32 +274,32 @@ export default function ReservationForm({ vehicle }: { vehicle: any }) {
             <div className="space-y-6 mb-8">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Adınız *</label>
+                  <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Adınız *</label>
                   <input 
                     required
                     type="text" 
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Soyadınız *</label>
+                  <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Soyadınız *</label>
                   <input 
                     required
                     type="text" 
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Telefon *</label>
+                  <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Telefon *</label>
                   <input 
                     required
                     type="tel" 
@@ -309,50 +309,50 @@ export default function ReservationForm({ vehicle }: { vehicle: any }) {
                     minLength={11}
                     maxLength={11}
                     placeholder="Örn: 05321234567"
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">TC / Pasaport No *</label>
+                  <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">TC / Pasaport No *</label>
                   <input 
                     required
                     type="text" 
                     name="identityNumber"
                     value={formData.identityNumber}
                     onChange={handleInputChange}
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">E-Posta Adresi *</label>
+                  <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">E-Posta Adresi *</label>
                   <input 
                     required
                     type="email" 
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Doğum Tarihi *</label>
+                  <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Doğum Tarihi *</label>
                   <input 
                     required
                     type="date" 
                     name="birthDate"
                     value={formData.birthDate}
                     onChange={handleInputChange}
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Ehliyet Sınıfı *</label>
+                  <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Ehliyet Sınıfı *</label>
                   <input 
                     required
                     type="text" 
@@ -360,24 +360,24 @@ export default function ReservationForm({ vehicle }: { vehicle: any }) {
                     value={formData.licenseClass}
                     onChange={handleInputChange}
                     placeholder="Örn: B"
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Geçerlilik Tarihi *</label>
+                  <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Geçerlilik Tarihi *</label>
                   <input 
                     required
                     type="date" 
                     name="licenseExpiry"
                     value={formData.licenseExpiry}
                     onChange={handleInputChange}
-                    className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                    className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                   />
                 </div>
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Ehliyet Verildiği İl/İlçe *</label>
+                <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Ehliyet Verildiği İl/İlçe *</label>
                 <input 
                   required
                   type="text" 
@@ -385,18 +385,18 @@ export default function ReservationForm({ vehicle }: { vehicle: any }) {
                   value={formData.licenseCity}
                   onChange={handleInputChange}
                   placeholder="Örn: İzmir/Karşıyaka"
-                  className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20"
+                  className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50"
                 />
               </div>
 
               <div>
-                <label className="block text-xs font-semibold text-white/50 uppercase tracking-wider mb-2 ml-1">Adres (Opsiyonel)</label>
+                <label className="block text-xs font-semibold text-muted-foreground uppercase tracking-wider mb-2 ml-1">Adres (Opsiyonel)</label>
                 <textarea 
                   name="address"
                   value={formData.address}
                   onChange={handleInputChange}
                   rows={2}
-                  className="w-full bg-black/40 border border-white/10 rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-white placeholder-white/20 resize-none"
+                  className="w-full bg-muted border border-border rounded-2xl px-5 py-4 focus:outline-none focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/50 transition-all text-foreground placeholder-muted-foreground/50 resize-none"
                 />
               </div>
             </div>

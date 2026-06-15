@@ -26,7 +26,7 @@ export default async function HomePage() {
   try {
     const vehiclesRef = collection(db, "vehicles");
     // Sadece "Müsait" olan araçları çek (Firebase'de Müsait yazıldığı varsayılmıştır)
-    const q = query(vehiclesRef, where("status", "==", "Müsait"), limit(6));
+    const q = query(vehiclesRef, where("status", "==", "Müsait"));
     const querySnapshot = await getDocs(q);
     
     querySnapshot.forEach((doc) => {

@@ -1,16 +1,21 @@
 @import "tailwindcss";
 
 :root {
-  --background: #09090b; /* Default to dark theme for premium feel */
-  --foreground: #fafafa;
-  --primary: #d4af37; /* Metallic Gold */
-  --primary-foreground: #09090b;
-  --primary-hover: #b5952f;
-  --card: #18181b;
-  --card-foreground: #fafafa;
-  --border: #27272a;
-  --muted: #27272a;
-  --muted-foreground: #a1a1aa;
+  /* Mobil uygulama paleti (src/theme/colors.ts) — sıcak fildişi + gold */
+  --background: #F8F5F0; /* warm ivory */
+  --foreground: #1A1512; /* textPrimary */
+  --primary: #C9993A; /* gold */
+  --primary-foreground: #FFFFFF;
+  --primary-hover: #9B7320; /* goldDark */
+  --primary-surface: #FDF6E7; /* goldSurface */
+  --card: #FFFFFF; /* surface */
+  --card-foreground: #1A1512;
+  --border: #EDE8E2;
+  --muted: #F3EFE9; /* borderLight / soft surface */
+  --muted-foreground: #6B5E52; /* textSecondary */
+  --success: #3E8C6A;
+  --danger: #C0392B;
+  --dark: #1A1512; /* charcoal accent surfaces */
 }
 
 @theme inline {
@@ -19,6 +24,10 @@
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
   --color-primary-hover: var(--primary-hover);
+  --color-primary-surface: var(--primary-surface);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --color-dark: var(--dark);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
   --color-border: var(--border);
@@ -26,6 +35,7 @@
   --color-muted-foreground: var(--muted-foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+  --font-display: var(--font-display);
 }
 
 body {
@@ -37,10 +47,42 @@ body {
 /* Custom Utilities for Premium Look */
 @layer utilities {
   .glass {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/70 backdrop-blur-md border border-black/5;
   }
-  
+
+  .glass-premium {
+    @apply bg-card border border-border shadow-xl shadow-black/5;
+  }
+
   .text-gradient {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-200;
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-amber-700;
   }
+
+  .font-display {
+    font-family: var(--font-display), Georgia, serif;
+    font-optical-sizing: auto;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-primary-hover;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-border to-transparent;
+  }
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
+}
+
+.grain-surface {
+  background-color: var(--card);
+  background-image: radial-gradient(circle at 1px 1px, rgba(26,21,18,0.05) 1px, transparent 0);
+  background-size: 22px 22px;
 }

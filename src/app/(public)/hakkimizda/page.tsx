@@ -56,7 +56,7 @@ export default function AboutUsPage() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="glass rounded-3xl p-8 md:p-12 shadow-2xl border border-white/10 relative overflow-hidden"
+          className="glass rounded-3xl p-8 md:p-12 shadow-2xl border border-border relative overflow-hidden"
         >
           {/* Decorative corner */}
           <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-bl from-primary/20 to-transparent rounded-bl-full pointer-events-none" />
@@ -96,7 +96,7 @@ export default function AboutUsPage() {
             { icon: Users, title: "Uzman Ekip", desc: "Alanında profesyonel kadro." },
             { icon: Trophy, title: "Müşteri Memnuniyeti", desc: "Önceliğimiz her zaman sizsiniz." }
           ].map((feature, i) => (
-            <div key={i} className="glass p-6 rounded-2xl border border-white/5 flex flex-col items-center text-center hover:bg-white/5 transition-colors">
+            <div key={i} className="glass p-6 rounded-2xl border border-border flex flex-col items-center text-center hover:bg-black/5 transition-colors">
               <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center mb-4 text-primary">
                 <feature.icon className="w-6 h-6" />
               </div>

@@ -89,19 +89,19 @@ export const PublicNavbar = () => {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="md:hidden glass border-t border-white/10"
+            className="md:hidden glass border-t border-border"
           >
             <div className="px-4 pt-2 pb-6 space-y-1">
-              <Link href="/vehicles" className="block px-3 py-3 rounded-md text-base font-medium hover:bg-white/5">
+              <Link href="/vehicles" className="block px-3 py-3 rounded-md text-base font-medium hover:bg-black/5">
                 Araç ve Motor Kiralama
               </Link>
-              <Link href="/store" className="block px-3 py-3 rounded-md text-base font-medium hover:bg-white/5">
+              <Link href="/store" className="block px-3 py-3 rounded-md text-base font-medium hover:bg-black/5">
                 Mağaza
               </Link>
-              <Link href="/hakkimizda" className="block px-3 py-3 rounded-md text-base font-medium hover:bg-white/5">
+              <Link href="/hakkimizda" className="block px-3 py-3 rounded-md text-base font-medium hover:bg-black/5">
                 Hakkımızda
               </Link>
-              <Link href="/services/maintenance" className="block px-3 py-3 rounded-md text-base font-medium hover:bg-white/5">
+              <Link href="/services/maintenance" className="block px-3 py-3 rounded-md text-base font-medium hover:bg-black/5">
                 Bakım Servisi
               </Link>
               <Link 
@@ -115,12 +115,12 @@ export const PublicNavbar = () => {
               <div className="mt-4 pt-4 border-t border-border">
                 {!isLoading && user && (
                   <div className="space-y-1">
-                    <Link href="/admin" className="block px-3 py-3 rounded-md text-base font-medium text-primary hover:bg-white/5">
+                    <Link href="/admin" className="block px-3 py-3 rounded-md text-base font-medium text-primary hover:bg-black/5">
                       Yönetim Paneli
                     </Link>
                     <button 
                       onClick={handleLogout}
-                      className="w-full text-left px-3 py-3 rounded-md text-base font-medium text-red-500 hover:bg-white/5"
+                      className="w-full text-left px-3 py-3 rounded-md text-base font-medium text-red-500 hover:bg-black/5"
                     >
                       Çıkış Yap
                     </button>

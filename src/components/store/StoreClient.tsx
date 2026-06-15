@@ -61,7 +61,7 @@ export default function StoreClient({
                 className={`w-full text-left px-4 py-3 rounded-xl transition-all font-medium ${
                   selectedCategory === "Tümü" 
                   ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20" 
-                  : "hover:bg-white/5 text-muted-foreground hover:text-foreground"
+                  : "hover:bg-black/5 text-muted-foreground hover:text-foreground"
                 }`}
               >
                 Tüm Ürünler
@@ -77,7 +77,7 @@ export default function StoreClient({
                     className={`w-full text-left px-4 py-3 rounded-xl transition-all font-medium flex justify-between items-center ${
                       selectedCategory === cat 
                       ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20" 
-                      : "hover:bg-white/5 text-muted-foreground hover:text-foreground"
+                      : "hover:bg-black/5 text-muted-foreground hover:text-foreground"
                     }`}
                   >
                     <span>{cat}</span>
@@ -137,7 +137,7 @@ export default function StoreClient({
                     key={item.id} 
                     className="bg-card rounded-2xl overflow-hidden border border-border group hover:border-primary/50 transition-colors flex flex-col h-full"
                   >
-                    <div className="relative h-56 w-full bg-white/5 flex items-center justify-center p-6 overflow-hidden">
+                    <div className="relative h-56 w-full bg-muted flex items-center justify-center p-6 overflow-hidden">
                       {item.imageUrl ? (
                         <Image 
                           src={item.imageUrl} 

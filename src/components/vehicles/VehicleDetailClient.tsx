@@ -16,7 +16,7 @@ export default function VehicleDetailClient({ vehicle }: { vehicle: any }) {
       
       {/* Back Button */}
       <div className="mb-8">
-        <a href="/vehicles" className="text-white/60 hover:text-[#D4AF37] transition-colors flex items-center gap-2 w-fit group">
+        <a href="/vehicles" className="text-muted-foreground hover:text-primary transition-colors flex items-center gap-2 w-fit group">
           <span className="transform group-hover:-translate-x-1 transition-transform">&larr;</span> Filoya Dön
         </a>
       </div>
@@ -28,7 +28,7 @@ export default function VehicleDetailClient({ vehicle }: { vehicle: any }) {
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="rounded-3xl overflow-hidden h-80 sm:h-[400px] md:h-[500px] relative mb-6 shadow-2xl shadow-black/50 border border-white/10"
+            className="rounded-3xl overflow-hidden h-80 sm:h-[400px] md:h-[500px] relative mb-6 shadow-2xl shadow-black/10 border border-border"
           >
             <Image 
               src={activeImage} 
@@ -45,7 +45,7 @@ export default function VehicleDetailClient({ vehicle }: { vehicle: any }) {
               <button 
                 key={idx}
                 onClick={() => setActiveImage(img)}
-                className={`relative w-28 h-28 rounded-xl overflow-hidden flex-shrink-0 transition-all duration-300 ${activeImage === img ? 'border-2 border-[#D4AF37] scale-105 shadow-lg shadow-[#D4AF37]/20' : 'border-2 border-transparent opacity-60 hover:opacity-100 hover:scale-105'}`}
+                className={`relative w-28 h-28 rounded-2xl overflow-hidden flex-shrink-0 transition-all duration-300 ${activeImage === img ? 'border-2 border-primary scale-105 shadow-lg shadow-primary/20' : 'border-2 border-transparent opacity-60 hover:opacity-100 hover:scale-105'}`}
               >
                 <Image src={img} alt={`Thumbnail ${idx+1}`} fill className="object-cover" />
               </button>
@@ -60,73 +60,73 @@ export default function VehicleDetailClient({ vehicle }: { vehicle: any }) {
           className="flex flex-col justify-center"
         >
           <div className="flex items-center gap-3 mb-6">
-            <span className="bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-black px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
+            <span className="bg-primary/10 text-primary border border-primary/20 px-4 py-1.5 rounded-full text-xs font-bold tracking-widest uppercase">
               {vehicle.status}
             </span>
-            <span className="bg-white/5 border border-white/10 text-white/80 px-4 py-1.5 rounded-full text-sm font-medium tracking-wider">
+            <span className="bg-card border border-border text-muted-foreground px-4 py-1.5 rounded-full text-sm font-medium tracking-wider">
               {vehicle.year}
             </span>
           </div>
 
-          <h1 className="text-5xl sm:text-6xl font-black mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-white/90 to-white/60 drop-shadow-sm">{vehicle.brand}</h1>
-          <h2 className="text-3xl font-light text-[#D4AF37] mb-10 tracking-wide">{vehicle.model}</h2>
+          <h1 className="font-display text-5xl sm:text-6xl mb-2 text-foreground">{vehicle.brand}</h1>
+          <h2 className="font-display text-3xl font-light text-primary mb-10 tracking-wide">{vehicle.model}</h2>
           
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-6 mb-12 pb-12 border-b border-white/10">
-            <div className="flex flex-col p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm">
-              <span className="flex items-center gap-2 text-white/50 text-xs tracking-wider uppercase mb-2"><Fuel className="w-4 h-4 text-[#D4AF37]" /> Yakıt Tipi</span>
-              <span className="font-bold text-lg text-white">{vehicle.fuelType || "Belirtilmemiş"}</span>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-12 pb-12 border-b border-border">
+            <div className="flex flex-col p-5 bg-card rounded-[1.5rem] border border-border hover:border-primary/30 transition-colors shadow-sm">
+              <span className="flex items-center gap-2 text-muted-foreground text-xs tracking-wider uppercase mb-2"><Fuel className="w-4 h-4 text-primary" /> Yakıt Tipi</span>
+              <span className="font-display text-xl text-foreground">{vehicle.fuelType || "Belirtilmemiş"}</span>
             </div>
-            <div className="flex flex-col p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm">
-              <span className="flex items-center gap-2 text-white/50 text-xs tracking-wider uppercase mb-2"><Settings className="w-4 h-4 text-[#D4AF37]" /> Vites</span>
-              <span className="font-bold text-lg text-white">{vehicle.transmission || "Belirtilmemiş"}</span>
+            <div className="flex flex-col p-5 bg-card rounded-[1.5rem] border border-border hover:border-primary/30 transition-colors shadow-sm">
+              <span className="flex items-center gap-2 text-muted-foreground text-xs tracking-wider uppercase mb-2"><Settings className="w-4 h-4 text-primary" /> Vites</span>
+              <span className="font-display text-xl text-foreground">{vehicle.transmission || "Belirtilmemiş"}</span>
             </div>
-            <div className="flex flex-col p-4 bg-white/5 rounded-2xl border border-white/5 backdrop-blur-sm">
-              <span className="flex items-center gap-2 text-white/50 text-xs tracking-wider uppercase mb-2"><Calendar className="w-4 h-4 text-[#D4AF37]" /> Üretim Yılı</span>
-              <span className="font-bold text-lg text-white">{vehicle.year}</span>
+            <div className="flex flex-col p-5 bg-card rounded-[1.5rem] border border-border hover:border-primary/30 transition-colors shadow-sm">
+              <span className="flex items-center gap-2 text-muted-foreground text-xs tracking-wider uppercase mb-2"><Calendar className="w-4 h-4 text-primary" /> Üretim Yılı</span>
+              <span className="font-display text-xl text-foreground">{vehicle.year}</span>
             </div>
           </div>
 
           <div className="mb-12">
-            <h3 className="text-xl font-bold mb-6 tracking-wide text-white">Araç Donanımı ve Özellikleri</h3>
+            <h3 className="font-display text-2xl mb-6 text-foreground">Araç Donanımı ve Özellikleri</h3>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {vehicle.features && vehicle.features.length > 0 ? (
                 vehicle.features.map((f: any, i: number) => (
-                  <li key={i} className="flex items-start gap-3 text-white/80">
-                    <span className="bg-[#D4AF37]/20 p-1 rounded-full mt-0.5">
-                      <Check className="w-3 h-3 text-[#D4AF37]" /> 
+                  <li key={i} className="flex items-start gap-3 text-foreground bg-card p-3 rounded-2xl border border-border shadow-sm">
+                    <span className="bg-[#FDF9F1] p-1.5 rounded-xl text-primary shrink-0">
+                      <Check className="w-4 h-4" /> 
                     </span>
-                    <span className="font-medium">{f.categoryName}: <span className="font-light text-white/60">{f.optionName}</span></span>
+                    <span className="font-medium flex-1 pt-1">{f.categoryName}: <span className="text-muted-foreground">{f.optionName}</span></span>
                   </li>
                 ))
               ) : (
-                <li className="text-white/40 italic">Özel donanım bilgisi girilmemiş.</li>
+                <li className="text-muted-foreground italic bg-card p-4 rounded-2xl border border-border">Özel donanım bilgisi girilmemiş.</li>
               )}
             </ul>
           </div>
 
-          <div className="glass-premium border border-white/10 p-8 rounded-3xl shadow-2xl relative overflow-hidden">
+          <div className="bg-card p-8 rounded-[2rem] border border-border shadow-2xl shadow-primary/5 relative overflow-hidden">
             {/* Background Accent */}
-            <div className="absolute -top-24 -right-24 w-48 h-48 bg-[#D4AF37] blur-[100px] opacity-20 rounded-full" />
+            <div className="absolute -top-32 -right-32 w-64 h-64 bg-primary/10 blur-3xl rounded-full pointer-events-none" />
             
             <div className="mb-8 relative z-10 flex flex-col gap-4">
               <div>
-                <p className="text-sm text-white/50 tracking-widest uppercase mb-2">Günlük Kiralama Bedeli</p>
+                <p className="eyebrow mb-2">Günlük Kiralama Bedeli</p>
                 {vehicle.dailyPrice ? (
                   <div className="flex items-end gap-2">
-                    <span className="text-5xl font-black text-white drop-shadow-md">₺{vehicle.dailyPrice}</span>
-                    <span className="text-white/50 pb-2 font-medium">/ gün</span>
+                    <span className="font-display text-5xl text-foreground">₺{vehicle.dailyPrice}</span>
+                    <span className="text-muted-foreground pb-2 font-medium">/ gün</span>
                   </div>
                 ) : (
-                  <span className="text-3xl font-bold text-white/90">Fiyat Alınız</span>
+                  <span className="font-display text-3xl text-foreground">Fiyat Alınız</span>
                 )}
               </div>
               
               {vehicle.monthlyPrice && (
-                <div className="pt-4 border-t border-white/10">
-                  <p className="text-sm text-white/50 tracking-widest uppercase mb-2">Aylık Kiralama Bedeli</p>
+                <div className="pt-4 border-t border-border">
+                  <p className="eyebrow mb-2">Aylık Kiralama Bedeli</p>
                   <div className="flex items-end gap-2">
-                    <span className="text-4xl font-bold text-[#D4AF37] drop-shadow-md">₺{vehicle.monthlyPrice}</span>
-                    <span className="text-white/50 pb-1 font-medium">/ ay</span>
+                    <span className="font-display text-4xl text-primary">₺{vehicle.monthlyPrice}</span>
+                    <span className="text-muted-foreground pb-1 font-medium">/ ay</span>
                   </div>
                 </div>
               )}
@@ -137,16 +137,16 @@ export default function VehicleDetailClient({ vehicle }: { vehicle: any }) {
                 href={`https://wa.me/905453370837?text=${encodeURIComponent(`Merhaba Ege Motors, ${vehicle.brand} ${vehicle.model} (${vehicle.year}) aracını kiralamak için bilgi almak istiyorum. Görsel: ${activeImage}`)}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full flex items-center justify-center gap-3 bg-[#25D366] text-white py-4 px-6 rounded-2xl font-bold text-lg hover:bg-[#20bd5a] transition-all shadow-lg shadow-[#25D366]/20 hover:shadow-[#25D366]/40 hover:-translate-y-1"
+                className="w-full flex items-center justify-center gap-3 bg-card border border-[#25D366]/30 text-[#25D366] py-4 px-6 rounded-full font-semibold text-lg hover:bg-[#25D366]/10 transition-all shadow-sm"
               >
-                <MessageCircle className="w-6 h-6" /> WhatsApp ile Hızlı İletişim
+                <MessageCircle className="w-5 h-5" /> WhatsApp ile İletişim
               </a>
 
               <a 
                 href="#reservation-form"
-                className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-[#D4AF37] to-[#AA7C11] text-black py-4 px-6 rounded-2xl font-bold text-lg transition-all shadow-lg shadow-[#D4AF37]/20 hover:shadow-[#D4AF37]/40 hover:-translate-y-1"
+                className="w-full flex items-center justify-center gap-3 bg-primary text-primary-foreground py-4 px-6 rounded-full font-semibold text-lg hover:bg-primary-hover transition-all shadow-lg shadow-primary/20"
               >
-                <Calendar className="w-6 h-6" /> Şimdi Rezervasyon Yap
+                <Calendar className="w-5 h-5" /> Şimdi Rezervasyon Yap
               </a>
             </div>
           </div>
@@ -156,10 +156,11 @@ export default function VehicleDetailClient({ vehicle }: { vehicle: any }) {
       </div>
 
       <div className="mt-20 max-w-5xl mx-auto pt-16 relative" id="reservation-form">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-[#D4AF37]/50 to-transparent" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[80%] h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
         <div className="text-center mb-12">
-          <h2 className="text-4xl sm:text-5xl font-black mb-4 text-white">Rezervasyon Oluştur</h2>
-          <p className="text-white/50 text-lg max-w-2xl mx-auto">Sadece birkaç adımda hayalinizdeki aracı kiralayın. Premium hizmet ayrıcalığını yaşayın.</p>
+          <span className="eyebrow mb-4 justify-center">Hızlı İşlem</span>
+          <h2 className="font-display text-4xl sm:text-5xl text-foreground mb-4">Rezervasyon Oluştur</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">Sadece birkaç adımda hayalinizdeki aracı kiralayın. Premium hizmet ayrıcalığını yaşayın.</p>
         </div>
         <ReservationForm vehicle={vehicle} />
       </div>

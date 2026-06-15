@@ -1,0 +1,88 @@
+<svg width="800" height="600" viewBox="0 0 800 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Egemotor360 premium otomobil illüstrasyonu">
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="800" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FDF8EE"/>
+      <stop offset="1" stop-color="#F2E7CF"/>
+    </linearGradient>
+    <linearGradient id="goldArc" x1="500" y1="80" x2="760" y2="360" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#E8C87A"/>
+      <stop offset="1" stop-color="#C9993A"/>
+    </linearGradient>
+    <linearGradient id="body" x1="180" y1="300" x2="640" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#241D18"/>
+      <stop offset="1" stop-color="#0F0B08"/>
+    </linearGradient>
+    <radialGradient id="shadow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#1A1512" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#1A1512" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="600" rx="36" fill="url(#panel)"/>
+
+  <!-- 360 degree ring motif -->
+  <g opacity="0.5">
+    <circle cx="600" cy="225" r="160" fill="none" stroke="url(#goldArc)" stroke-width="2"/>
+    <circle cx="600" cy="225" r="130" fill="none" stroke="#C9993A" stroke-width="1" stroke-dasharray="3 7" opacity="0.6"/>
+  </g>
+  <path d="M600 65 A160 160 0 0 1 760 225" fill="none" stroke="url(#goldArc)" stroke-width="6" stroke-linecap="round"/>
+  <text x="600" y="120" font-family="Georgia, serif" font-size="34" font-style="italic" fill="#C9993A" text-anchor="middle" opacity="0.85">360°</text>
+
+  <!-- speed lines -->
+  <g stroke="#C9993A" stroke-linecap="round" opacity="0.55">
+    <line x1="70" y1="320" x2="160" y2="320" stroke-width="4"/>
+    <line x1="50" y1="350" x2="190" y2="350" stroke-width="4"/>
+    <line x1="80" y1="380" x2="150" y2="380" stroke-width="4"/>
+  </g>
+
+  <!-- ground shadow -->
+  <ellipse cx="400" cy="470" rx="280" ry="34" fill="url(#shadow)"/>
+
+  <!-- car silhouette -->
+  <g>
+    <path d="M150 432
+             C150 408 168 398 196 392
+             L262 366
+             C290 332 322 318 372 316
+             L470 314
+             C516 314 548 326 576 352
+             L632 380
+             C656 388 668 402 668 432
+             Z"
+          fill="url(#body)"/>
+    <!-- window glass -->
+    <path d="M300 348 C322 330 348 322 380 322 L452 322 C470 322 484 328 498 342 L470 360 L330 360 Z"
+          fill="#6B7F9B" opacity="0.55"/>
+    <!-- gold beltline -->
+    <path d="M200 392 L262 366 C290 334 322 320 372 318" stroke="#C9993A" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.9"/>
+    <!-- headlight -->
+    <circle cx="648" cy="404" r="7" fill="#E8C87A"/>
+    <!-- door line -->
+    <line x1="408" y1="324" x2="408" y2="430" stroke="#000" stroke-width="1.5" opacity="0.35"/>
+  </g>
+
+  <!-- wheels -->
+  <g>
+    <circle cx="268" cy="438" r="52" fill="#15110D"/>
+    <circle cx="268" cy="438" r="52" fill="none" stroke="#C9993A" stroke-width="3"/>
+    <circle cx="268" cy="438" r="22" fill="none" stroke="#C9993A" stroke-width="3"/>
+    <circle cx="268" cy="438" r="6" fill="#C9993A"/>
+    <g stroke="#C9993A" stroke-width="2.5">
+      <line x1="268" y1="416" x2="268" y2="460"/>
+      <line x1="246" y1="438" x2="290" y2="438"/>
+      <line x1="252" y1="422" x2="284" y2="454"/>
+      <line x1="284" y1="422" x2="252" y2="454"/>
+    </g>
+
+    <circle cx="556" cy="438" r="52" fill="#15110D"/>
+    <circle cx="556" cy="438" r="52" fill="none" stroke="#C9993A" stroke-width="3"/>
+    <circle cx="556" cy="438" r="22" fill="none" stroke="#C9993A" stroke-width="3"/>
+    <circle cx="556" cy="438" r="6" fill="#C9993A"/>
+    <g stroke="#C9993A" stroke-width="2.5">
+      <line x1="556" y1="416" x2="556" y2="460"/>
+      <line x1="534" y1="438" x2="578" y2="438"/>
+      <line x1="540" y1="422" x2="572" y2="454"/>
+      <line x1="572" y1="422" x2="540" y2="454"/>
+    </g>
+  </g>
+</svg>

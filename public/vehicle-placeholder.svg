@@ -1,0 +1,24 @@
+<svg width="640" height="480" viewBox="0 0 640 480" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Araç görseli yakında">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="640" y2="480" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#FBF7EF"/>
+      <stop offset="1" stop-color="#F1ECE4"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="480" fill="url(#bg)"/>
+  <ellipse cx="320" cy="320" rx="190" ry="22" fill="#1A1512" opacity="0.10"/>
+  <g>
+    <path d="M150 300 C150 282 162 274 184 270 L236 250 C258 224 284 214 322 212 L398 211 C434 211 460 221 482 240 L526 262 C546 270 556 280 556 300 Z" fill="#1A1512"/>
+    <path d="M268 238 C286 222 308 216 334 216 L392 216 C406 216 418 222 430 234 L408 250 L292 250 Z" fill="#6B7F9B" opacity="0.5"/>
+    <path d="M186 270 L236 250 C258 226 284 216 322 214" stroke="#C9993A" stroke-width="3" fill="none" stroke-linecap="round"/>
+  </g>
+  <g>
+    <circle cx="240" cy="305" r="40" fill="#15110D"/>
+    <circle cx="240" cy="305" r="40" fill="none" stroke="#C9993A" stroke-width="3"/>
+    <circle cx="240" cy="305" r="14" fill="none" stroke="#C9993A" stroke-width="3"/>
+    <circle cx="466" cy="305" r="40" fill="#15110D"/>
+    <circle cx="466" cy="305" r="40" fill="none" stroke="#C9993A" stroke-width="3"/>
+    <circle cx="466" cy="305" r="14" fill="none" stroke="#C9993A" stroke-width="3"/>
+  </g>
+  <text x="320" y="400" font-family="Georgia, serif" font-size="22" fill="#A89B8F" text-anchor="middle">Görsel yakında</text>
+</svg>

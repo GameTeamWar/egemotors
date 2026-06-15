@@ -28,7 +28,7 @@ export default function AuthLayout({
           </Link>
         </div>
         
-        <div className="glass p-8 rounded-2xl border border-white/10 shadow-2xl">
+        <div className="glass p-8 rounded-2xl border border-border shadow-2xl">
           {children}
         </div>
       </div>

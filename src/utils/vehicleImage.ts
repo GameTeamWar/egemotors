@@ -1,5 +1,5 @@
 export function getVehicleCoverImage(vehicle: any): string {
-  if (!vehicle) return "/hero-bg-v2.png";
+  if (!vehicle) return "/vehicle-placeholder.svg";
 
   if (vehicle.photos && Array.isArray(vehicle.photos) && vehicle.photos.length > 0) {
     // Legacy support for string arrays
@@ -15,11 +15,11 @@ export function getVehicleCoverImage(vehicle: any): string {
     if (visiblePhotos.length > 0 && visiblePhotos[0].url) return visiblePhotos[0].url;
   }
   
-  return vehicle.imageUrl || "/hero-bg-v2.png";
+  return vehicle.imageUrl || "/vehicle-placeholder.svg";
 }
 
 export function getVisibleVehicleImages(vehicle: any): string[] {
-  if (!vehicle) return ["/hero-bg-v2.png"];
+  if (!vehicle) return ["/vehicle-placeholder.svg"];
 
   if (vehicle.photos && Array.isArray(vehicle.photos) && vehicle.photos.length > 0) {
     // Legacy support for string arrays
@@ -36,5 +36,5 @@ export function getVisibleVehicleImages(vehicle: any): string[] {
     if (visiblePhotos.length > 0) return visiblePhotos;
   }
   
-  return vehicle.imageUrl ? [vehicle.imageUrl] : ["/hero-bg-v2.png"];
+  return vehicle.imageUrl ? [vehicle.imageUrl] : ["/vehicle-placeholder.svg"];
 }

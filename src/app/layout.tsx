@@ -14,8 +14,54 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Egemotor360 | Premium Araç Kiralama ve Satış",
-  description: "Egemotor360 Premium web platformu. Lüks araç kiralama, satın alma ve tam yönetim sistemi.",
+  metadataBase: new URL('https://egemotors.net'),
+  title: {
+    default: "Egemotor360 | Premium Araç ve Motosiklet Kiralama",
+    template: "%s | Ege Motors"
+  },
+  description: "Ege Motors ile premium lüks araç ve motosiklet kiralama, satın alma ve profesyonel yol yardım hizmetleri. Hayallerinizdeki sürüş deneyimini yaşayın.",
+  keywords: ["araç kiralama", "lüks araç", "motosiklet kiralama", "7/24 yol yardım", "oto tamir", "Ege Motors", "rent a car", "premium araç"],
+  authors: [{ name: "Ege Motors" }],
+  creator: "Ege Motors",
+  publisher: "Ege Motors",
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
+  openGraph: {
+    type: "website",
+    locale: "tr_TR",
+    url: "https://egemotors.net",
+    siteName: "Ege Motors",
+    title: "Egemotor360 | Premium Araç ve Motosiklet Kiralama",
+    description: "Premium lüks araç ve motosiklet kiralama, profesyonel yol yardım hizmetleri.",
+    images: [
+      {
+        url: "/icon.png",
+        width: 800,
+        height: 800,
+        alt: "Ege Motors Logo",
+      }
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Egemotor360 | Premium Araç ve Motosiklet Kiralama",
+    description: "Premium lüks araç ve motosiklet kiralama, profesyonel yol yardım hizmetleri.",
+    images: ["/icon.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
 };
 
 export default function RootLayout({

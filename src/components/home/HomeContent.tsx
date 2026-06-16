@@ -174,6 +174,7 @@ export default function HomeContent({ availableVehicles }: { availableVehicles: 
                   src="/images/services/service_car_rental.png"
                   alt="Lüks Araç Kiralama"
                   fill
+                  sizes="(max-width: 768px) 100vw, 66vw"
                   className="object-cover opacity-60 group-hover:opacity-80 group-hover:scale-105 transition-all duration-700 mix-blend-multiply"
                 />
               </div>
@@ -233,6 +234,7 @@ export default function HomeContent({ availableVehicles }: { availableVehicles: 
                         src={getVehicleCoverImage(vehicle)}
                         alt={`${vehicle.brand} ${vehicle.model}`}
                         fill
+                        sizes="(max-width: 768px) 100vw, 33vw"
                         className="object-cover group-hover:scale-105 transition-transform duration-700"
                       />
                       <div className="absolute top-4 left-4 bg-card/90 backdrop-blur-sm text-xs font-semibold px-3 py-1.5 rounded-full border border-border flex items-center gap-1.5">
@@ -397,6 +399,7 @@ function BentoTile({ icon, title, link, accent, image }: { icon: React.ReactNode
               src={image}
               alt={title}
               fill
+              sizes="(max-width: 768px) 100vw, 33vw"
               className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500 mix-blend-multiply"
             />
           </div>

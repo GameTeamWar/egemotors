@@ -82,6 +82,7 @@ export default function VehicleListClient({ initialVehicles }: { initialVehicles
                   src={getVehicleCoverImage(vehicle)} 
                   alt={`${vehicle.brand} ${vehicle.model}`} 
                   fill 
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute top-4 right-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">

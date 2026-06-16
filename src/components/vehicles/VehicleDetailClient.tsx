@@ -34,6 +34,7 @@ export default function VehicleDetailClient({ vehicle }: { vehicle: any }) {
               src={activeImage} 
               alt={`${vehicle.brand} ${vehicle.model}`} 
               fill 
+              sizes="(max-width: 1024px) 100vw, 50vw"
               className="object-cover"
               priority
             />
@@ -47,7 +48,7 @@ export default function VehicleDetailClient({ vehicle }: { vehicle: any }) {
                 onClick={() => setActiveImage(img)}
                 className={`relative w-28 h-28 rounded-2xl overflow-hidden flex-shrink-0 transition-all duration-300 ${activeImage === img ? 'border-2 border-primary scale-105 shadow-lg shadow-primary/20' : 'border-2 border-transparent opacity-60 hover:opacity-100 hover:scale-105'}`}
               >
-                <Image src={img} alt={`Thumbnail ${idx+1}`} fill className="object-cover" />
+                <Image src={img} alt={`Thumbnail ${idx+1}`} fill sizes="112px" className="object-cover" />
               </button>
             ))}
           </div>

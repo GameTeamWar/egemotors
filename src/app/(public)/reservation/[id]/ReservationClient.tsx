@@ -334,6 +334,7 @@ export default function ReservationClient({ vehicle }: { vehicle: any }) {
               src={getVehicleCoverImage(vehicle)} 
               alt={vehicle.brand} 
               fill 
+              sizes="(max-width: 1024px) 100vw, 33vw"
               className="object-cover"
             />
           </div>

@@ -28,7 +28,7 @@ export default function MotorcycleRentalPage() {
       
       <section className="bg-muted py-20 border-b border-border relative overflow-hidden">
         <div className="absolute inset-0 opacity-10">
-          <Image src="/hero-bg-v2.png" alt="Motosiklet" fill className="object-cover" />
+          <Image src="/hero-bg-v2.png" alt="Motosiklet" fill sizes="100vw" className="object-cover" />
         </div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center max-w-3xl mx-auto">
